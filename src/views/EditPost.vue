@@ -23,12 +23,20 @@ watchEffect(() => {
 // Save changes and update last updated date
 const saveChanges = () => {
   if (post.value) {
-    post.value.title = editedTitle.value
-    post.value.content = editedContent.value
-    post.value.dateUpdated = new Date().toLocaleDateString()
+    // Checking if any changes were made
+    if (
+      post.value.title !== editedTitle.value ||
+      post.value.content !== editedContent.value
+    ) {
+      post.value.title = editedTitle.value
+      post.value.content = editedContent.value
+      post.value.dateUpdated = new Date().toLocaleDateString()
+    }
+    // Redirect to the post page
     router.push(`/post/${postId}`)
   }
 }
+
 
 // Cancel editing
 const cancelEdit = () => {
@@ -40,15 +48,21 @@ const cancelEdit = () => {
 <template>
   <MainLayout>
     <div class="p-4 md:p-8 mt-4">
-      <h1 class="text-xl md:text-4xl font-bold mb-2">Edit Post</h1>
-      <input
+      <h1 class="text-xl md:text-4xl font-bold mb-4">Edit Post</h1>
+      <div>
+        <label class="text-[16px] mb-2">Title</label>
+        <input
         v-model="editedTitle"
-        class="w-full text-xl font-bold mb-2 border p-2 rounded-[10px] border-[#707070] outline-0"
+        class="w-full text-[16px] mb-2 mt-2 border p-2 rounded-[10px] border-[#707070] outline-0"
       />
-      <textarea
+      </div>
+      <div class="mt-2">
+        <label class="text-[16px]">Details</label>
+        <textarea
         v-model="editedContent"
-        class="w-full text-[16px] border border-[#707070] p-2 rounded-[10px] mt-4 h-[20rem] outline-0 resize-none"
+        class="w-full text-[16px] border border-[#707070] p-2 rounded-[10px] mt-2 h-[20rem] outline-0 resize-none"
       ></textarea>
+      </div>
       <div class="flex gap-4 mt-4">
         <button
           @click="saveChanges"

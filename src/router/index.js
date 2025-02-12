@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import SignupAuth from '@/auths/SignupAuth.vue'
 import LoginAuth from '@/auths/LoginAuth.vue'
-import LandingView from '@/views/LandingView.vue'
+import PostsView from '@/views/PostsView.vue'
 import PostDetailsView from "@/views/PostDetailsView.vue"
 import EditPost from '@/views/EditPost.vue'
 
@@ -31,9 +31,9 @@ const router = createRouter({
       component: LoginAuth,
     },
     {
-      path: '/landing',
-      name: 'landing',
-      component: LandingView,
+      path: '/posts',
+      name: 'posts',
+      component: PostsView,
     },
     {
       path: '/post/:id',

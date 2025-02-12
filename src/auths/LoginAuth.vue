@@ -44,7 +44,7 @@ const onSubmit = () => {
       alert(`Welcome back, ${user.fullName}!`);
 
       // Redirect to the home page
-      router.push({ name: 'landing' });
+      router.push({ name: 'posts' });
     } else {
       errors.value.login = 'Invalid email or password';
     }

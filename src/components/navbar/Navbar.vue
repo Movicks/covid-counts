@@ -30,7 +30,7 @@
   >
     <div class="flex flex-col gap-4 w-full px-4 pt-5">
       <router-link @click="toggleMenu" to="/">Home</router-link>
-      <router-link @click="toggleMenu" to="/landing" v-if="isLoggedIn">Landing</router-link>
+      <router-link @click="toggleMenu" to="/posts" v-if="isLoggedIn">Posts</router-link>
       <router-link @click="toggleMenu" to="/about">About</router-link>
       <button v-if="isLoggedIn" class="text-start">My Bucket</button>
     </div>
@@ -58,8 +58,9 @@
         @click="logout"
         class="bg-white text-[#008289] hover:bg-gray-400 rounded-md px-6 py-2 text-center"
       >
-        Logout
+        Log Out
       </button>
+      <!-- if logged in, show my profile button but i had to leave for now-->
       <!-- <button v-if="isLoggedIn">My Profile</button> -->
     </div>
   </div>
