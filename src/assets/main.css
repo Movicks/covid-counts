@@ -14,3 +14,14 @@
   transition: all 0.3s ease-in-out;
   background: #FFF5A7;
 }
+
+.Register:hover, .Register:focus {
+  transition: all 0.3s ease-in-out;
+  background: #008289;
+  color: white;
+}
+.Login:hover, .Login:focus {
+  transition: all 0.3s ease-in-out;
+  background: white;
+  color: #008289;
+}
