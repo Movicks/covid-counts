@@ -38,9 +38,18 @@ const handleLoadMore = () => {
   <MainLayout>
     <!-- Landing Page Content -->
     <div class="flex flex-col items-start justify-center w-full h-full py-[2.5rem] md:py-[5rem] text-center">
-      <h2 v-if="user.fullName" class="text-2xl md:text-4xl font-bold mb-1">Welcome {{ user.fullName }},</h2>
-      <h2 v-else class="text-4xl font-bold">Welcome Guest,</h2>
-      <p class="text-[16px]">Here are items in your eventful moment bucket.</p>
+      <div class="flex flex-col md:flex-row items-start md:justify-between w-full gap-2 md:gap-10">
+        <div class="flex flex-col items-start justify-start text-start">
+          <h2 v-if="user.fullName" class="text-2xl md:text-4xl font-bold mb-1">Welcome {{ user.fullName }},</h2>
+          <h2 v-else class="text-4xl font-bold">Welcome Guest,</h2>
+          <p class="text-[16px]">Here are items in your eventful moment bucket.</p>
+        </div>
+        <router-link to="/add-post" 
+          class="bg-[#5271FF] border border-[#707070] max-w-[235px] mt-5 py-2 md:mt-10 w-full text-white px-6 h-[44px] rounded-[10px] text-center text-[16px]"
+          >
+          Add item
+        </router-link>
+      </div>
       <div class="flex flex-col items-center justify-center gap-4 w-full mt-10 md:mt-20">
         <PostsCards>
           <!-- Card contents -->

@@ -5,6 +5,7 @@ import LoginAuth from '@/auths/LoginAuth.vue'
 import PostsView from '@/views/PostsView.vue'
 import PostDetailsView from "@/views/PostDetailsView.vue"
 import EditPost from '@/views/EditPost.vue'
+import AddPostItem from '@/views/AddPostItem.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -29,6 +30,11 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: LoginAuth,
+    },
+    {
+      path: '/add-post',
+      name: 'add-post',
+      component: AddPostItem,
     },
     {
       path: '/posts',

@@ -18,7 +18,7 @@ const handleDelete = () => {
   const index = posts.findIndex((p) => p.id === postId);
   if (index !== -1) {
     posts.splice(index, 1);
-    router.push('/landing');
+    router.push('/posts');
   }
 };
 
