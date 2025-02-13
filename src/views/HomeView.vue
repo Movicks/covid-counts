@@ -38,7 +38,7 @@ export default {
       // Set isLoggedIn to true if user exists
       this.isLoggedIn = !!user;
     },
-    
+
     logout() {
       // Remove user data from localStorage
       localStorage.removeItem('user');
